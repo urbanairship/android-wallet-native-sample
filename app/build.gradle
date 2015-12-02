@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "${walletSampleApplicationId}"
+
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField "String", "URBANAIRSHIP_API_KEY", "\"${walletSampleApiKey}\""
+        buildConfigField "String", "URBANAIRSHIP_TEMPLATE_ID", "\"${walletSampleTemplateId}\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile 'com.google.android.gms:play-services-location:8.1.0'
+    compile 'com.urbanairship.android:wallet:1.0.0'
+
+    // MODIFICATION REQUIRED: Add the Google Play Services Wallet Second Party AAR file from Google.
+}
