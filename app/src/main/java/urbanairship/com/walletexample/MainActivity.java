@@ -90,9 +90,13 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onError() {
+                public void onError(@PassRequest.Error int errorCode) {
                     Toast.makeText(getApplicationContext(), "Unable to fetch pass", Toast.LENGTH_SHORT).show();
                     fetchProgressView.setVisibility(View.GONE);
+
+                    if (errorCode == PassRequest.ERROR_NETWORK_ERROR) {
+                        // Retry
+                    }
                 }
             });
         }
