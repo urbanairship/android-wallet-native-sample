@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Unable to fetch pass", Toast.LENGTH_SHORT).show();
                     fetchProgressView.setVisibility(View.GONE);
 
-                    if (errorCode == PassRequest.ERROR_NETWORK_ERROR) {
+                    if (errorCode == PassRequest.ERROR_NETWORK) {
                         // Retry
                     }
                 }
