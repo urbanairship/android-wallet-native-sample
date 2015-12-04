@@ -19,6 +19,7 @@ import com.urbanairship.wallet.pass.PassRequest;
 public class MainActivity extends AppCompatActivity {
 
     private static final int SAVE_TO_WALLET = 100;
+    static final String EXTRA_PASS = "pass";
 
     private Pass pass;
     private PassRequest passRequest;
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         if (savedInstanceState != null) {
-            pass = savedInstanceState.getParcelable(Pass.EXTRA_PASS);
+            pass = savedInstanceState.getParcelable(EXTRA_PASS);
         }
 
         if (pass == null) {
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         if (pass != null) {
-            outState.putParcelable(Pass.EXTRA_PASS, pass);
+            outState.putParcelable(EXTRA_PASS, pass);
         }
     }
 
