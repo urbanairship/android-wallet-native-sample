@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         if (savedInstanceState != null) {
-            pass = savedInstanceState.getParcelable("pass");
+            pass = savedInstanceState.getParcelable(Pass.EXTRA_PASS);
         }
 
         if (pass == null) {
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         if (pass != null) {
-            outState.putParcelable("pass", pass);
+            outState.putParcelable(Pass.EXTRA_PASS, pass);
         }
     }
 
