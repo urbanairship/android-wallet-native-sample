@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                     .setName("Pass Title")
                     .build();
 
-            passRequest.execute(new PassRequest.Callback() {
+            passRequest.execute(this, new PassRequest.Callback() {
                 @Override
                 public void onResult(Pass pass) {
                     MainActivity.this.pass = pass;
